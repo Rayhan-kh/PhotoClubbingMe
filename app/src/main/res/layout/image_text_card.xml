@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:paddingBottom="10dp"
+    card_view:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundedImage2"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:src="@color/colorAccent"
+            card_view:riv_corner_radius_top_left="4dp"
+            card_view:riv_corner_radius_top_right="4dp"/>
+
+        <TextView
+            android:id="@+id/folderName"
+            android:textColor="@color/colorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_below="@+id/roundedImage2"
+            android:textSize="14sp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
+
+
+        <TextView
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/colorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_25"
+            android:layout_below="@+id/folderName"
+            android:textSize="12sp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"/>
+    </RelativeLayout>
+
+
 
 </android.support.v7.widget.CardView>
