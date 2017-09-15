@@ -105,7 +105,8 @@
         android:src="@drawable/ic_keyboard_arrow_right"
         app:layout_anchor="@id/lay"
         app:layout_anchorGravity="bottom|center"
-        app:theme="@style/AppTheme" />
+        app:theme="@style/AppTheme"
+        android:onClick="login"/>
 
     <TextView
         android:layout_width="wrap_content"
