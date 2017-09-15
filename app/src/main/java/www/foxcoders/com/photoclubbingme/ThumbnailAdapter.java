@@ -26,10 +26,11 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
         CheckBox checkBox;
         ImageView imageView;
         CardView cardView;
+        View view;
 
         public ViewHolder(View itemView, final FolderActivity folderActivity) {
             super(itemView);
-
+            view=(View)itemView.findViewById(R.id.mask);
             imageView=(ImageView)itemView.findViewById(R.id.img_th);
             cardView=(CardView)itemView.findViewById(R.id.thumbCard);
             checkBox=(CheckBox)itemView.findViewById(R.id.checkbox);
@@ -72,9 +73,12 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
         if(!folderActivity.is_in_action_mode)
         {
             holder.checkBox.setVisibility(View.GONE);
+            holder.view.setVisibility(View.GONE);
         }
         else {
             holder.checkBox.setVisibility(View.VISIBLE);
+            holder.view.setVisibility(View.VISIBLE);
+
         }
 
     }

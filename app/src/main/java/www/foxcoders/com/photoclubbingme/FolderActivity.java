@@ -94,8 +94,8 @@ public class FolderActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public boolean onLongClick(View v) {
-//        toolbar.getMenu().clear();
-//        toolbar.inflateMenu(R.menu.bottom_navigation_menu);
+        toolbar.getMenu().clear();
+        toolbar.inflateMenu(R.menu.multi_selected_menu);
         is_in_action_mode=true;
         thumbnailAdapter.notifyDataSetChanged();
         return true;

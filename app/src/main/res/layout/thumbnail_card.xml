@@ -6,6 +6,10 @@
     android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/img_th"
@@ -15,11 +19,20 @@
         app:riv_corner_radius="4dp"
         android:src="@drawable/ic_perm_identity"/>
 
-    <CheckBox
-        app:theme="@style/LoginTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkbox"
-        />
+        <View
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="#5AFFFFFF"
+            android:id="@+id/mask"
+            />
+
+        <CheckBox
+            android:theme="@style/CheckboxThem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbox"
+            />
+    </RelativeLayout>
+
 
 </android.support.v7.widget.CardView>

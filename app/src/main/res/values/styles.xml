@@ -17,5 +17,11 @@
         <item name="colorAccent">@color/colorWhite</item>
     </style>
 
+    <style name="CheckboxThem" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorIndigo</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+    </style>
+
 
 </resources>
