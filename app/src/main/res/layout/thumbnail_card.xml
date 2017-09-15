@@ -17,7 +17,7 @@
         android:scaleType="centerCrop"
         android:layout_height="75dp"
         app:riv_corner_radius="4dp"
-        android:src="@drawable/ic_perm_identity"/>
+        android:src="@drawable/unnamed"/>
 
         <View
             android:layout_width="75dp"

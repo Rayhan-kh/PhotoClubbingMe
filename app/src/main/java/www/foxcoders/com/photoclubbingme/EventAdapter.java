@@ -17,7 +17,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     private ItemClickListener mClickListener;
 
 
-
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ViewHolder(View itemView) {
@@ -34,7 +33,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             }
         }
     }
-
 
 
     public EventAdapter(Context context, String[] data) {
@@ -68,9 +66,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
-    }
-    public interface ItemLongClickListener {
-        void onItemLongClick(View view,int position);
     }
 
 

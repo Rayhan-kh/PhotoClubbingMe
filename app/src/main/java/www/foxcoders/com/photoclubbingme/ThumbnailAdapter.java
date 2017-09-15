@@ -19,8 +19,7 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
     FolderActivity folderActivity;
     private String[] mData = new String[0];
     private LayoutInflater mInflater;
-    private ThumbnailAdapter.ItemClickListener mClickListener;
-    private ThumbnailAdapter.ItemLongClickListener mLongClickListener;
+    private ThumbnailAdapter.ItemClickListener presenter;
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CheckBox checkBox;
@@ -30,32 +29,30 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
 
         public ViewHolder(View itemView, final FolderActivity folderActivity) {
             super(itemView);
-            view=(View)itemView.findViewById(R.id.mask);
+            view=itemView.findViewById(R.id.mask);
             imageView=(ImageView)itemView.findViewById(R.id.img_th);
             cardView=(CardView)itemView.findViewById(R.id.thumbCard);
             checkBox=(CheckBox)itemView.findViewById(R.id.checkbox);
             itemView.setOnClickListener(this);
             cardView.setLongClickable(true);
             cardView.setOnLongClickListener(folderActivity);
-
+            cardView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            if (mClickListener != null)
-            {
-                setClickListener(mClickListener);
-                mClickListener.onThumbnailClick(v, getAdapterPosition()); }       }
-
+            if (presenter != null) {
+                presenter.onThumbnailClick(v,getAdapterPosition());
+            }
+            }
 
     }
-
-
 
     public ThumbnailAdapter(Context context, String[] data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
         folderActivity= (FolderActivity) context;
+        presenter=(ThumbnailAdapter.ItemClickListener)context;
     }
 
     @Override
@@ -93,16 +90,10 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
         return mData.length;
     }
 
-    // allows clicks events to be caught
-    public void setClickListener(ThumbnailAdapter.ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
 
     public interface ItemClickListener {
         void onThumbnailClick(View view, int position);
     }
 
-    public interface ItemLongClickListener{
-        void onThumbnailLongClick(View view,int position);
-    }
+
 }

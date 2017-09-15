@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="www.foxcoders.com.photoclubbingme.ShowCaseActivity">
 
     <include
@@ -11,15 +12,40 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/showCase"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@+id/showCaseToolbar"
+        android:layout_above="@+id/navLay"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/showCaseToolbar"
-        android:layout_margin="10dp"
-        android:background="@drawable/unnamed"
         android:scaleType="centerCrop"
-        app:riv_corner_radius="12dp"
-        android:layout_above="@+id/navLay"/>
+        android:src="@drawable/unnamed"
+        android:adjustViewBounds="true"
+        app:riv_corner_radius="12dp" />
+    <RelativeLayout
+        android:id="@+id/hideMask"
+        android:visibility="gone"
+        android:layout_below="@+id/showCaseToolbar"
+        android:layout_above="@id/navLay"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="#ffffff"
+            android:adjustViewBounds="true"
+            app:riv_corner_radius="12dp" />
+
+        <ImageView
+            android:src="@drawable/ic_visibility_off"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorAccent"/>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/navLay"

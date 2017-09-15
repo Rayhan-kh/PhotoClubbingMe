@@ -88,7 +88,7 @@ public class FolderActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onThumbnailClick(View view, int position) {
-
+        startActivity(new Intent(this,ShowCaseActivity.class));
     }
 
 

@@ -16,7 +16,7 @@
             android:layout_width="140dp"
             android:layout_height="90dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cloud"
+            android:src="@drawable/unnamed"
             card_view:riv_corner_radius_top_left="4dp"
             card_view:riv_corner_radius_top_right="4dp"/>
 
