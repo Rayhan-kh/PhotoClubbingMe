@@ -10,12 +10,50 @@
         layout="@layout/toolbar" />
 
     <LinearLayout
+        android:id="@+id/action"
+        android:layout_below="@id/folderToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:clickable="true"
+            android:id="@+id/tvNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newest"
+            android:textColor="@color/colorText"
+            android:textSize="14sp" />
+
+        <TextView
+            android:clickable="true"
+            android:id="@+id/tvPop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Popular"
+            android:textColor="@color/colorText"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/spnDate"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="3"
-        android:baselineAligned="true"
         android:layout_above="@+id/navView"
-        android:layout_below="@+id/folderToolbar">
+        android:layout_below="@+id/action"
+        android:baselineAligned="true"
+        android:weightSum="3">
 
         <LinearLayout
 
@@ -41,8 +79,8 @@
             android:gravity="center_horizontal">
 
             <android.support.v7.widget.RecyclerView
-                android:layout_width="wrap_content"
                 android:id="@+id/thumb_rv"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
             </android.support.v7.widget.RecyclerView>

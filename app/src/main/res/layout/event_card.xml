@@ -15,10 +15,11 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/roundedImage1"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@color/colorAccent"
+            android:src="@drawable/unnamed"
+            android:adjustViewBounds="true"
             app:riv_corner_radius="12dp" />
 
 

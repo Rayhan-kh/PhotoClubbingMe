@@ -12,22 +12,30 @@ import android.view.ViewGroup;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
+    private String[] mData = new String[0];
+    private LayoutInflater mInflater;
+    private ItemClickListener mClickListener;
+
+
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-
         }
 
         @Override
         public void onClick(View v) {
-            if (mClickListener != null) mClickListener.onItemClick(v, getAdapterPosition());        }
+
+            if (mClickListener != null) {
+                setClickListener(mClickListener);
+                mClickListener.onItemClick(v, getAdapterPosition());
+            }
+        }
     }
 
-    private String[] mData = new String[0];
-    private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
+
 
     public EventAdapter(Context context, String[] data) {
         this.mInflater = LayoutInflater.from(context);
@@ -61,4 +69,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+    public interface ItemLongClickListener {
+        void onItemLongClick(View view,int position);
+    }
+
+
 }
