@@ -1,7 +1,9 @@
 package www.foxcoders.com.photoclubbingme.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
@@ -18,10 +20,19 @@ public class SlideShowActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     List<Integer> drawables=new ArrayList<>();
+    private SharedPreferences sharedPref;
+    private boolean isLoggedIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide_show);
+
+        sharedPref = this.getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        isLoggedIn=sharedPref.getBoolean("isLoggedIn",false);
+
+
+
         toolbar=(Toolbar)findViewById(R.id.slideshowToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -37,12 +48,17 @@ public class SlideShowActivity extends AppCompatActivity {
     }
 
     private void initImages() {
+
         drawables.add(R.drawable.moon);
         drawables.add(R.drawable.road);
         drawables.add(R.drawable.man);
         drawables.add(R.drawable.flower);
         drawables.add(R.drawable.unnamed);
         drawables.add(R.drawable.star);
+        if(!isLoggedIn)
+        {
+            drawables.add(2,R.drawable.advlarge);
+        }
 
     }
 
