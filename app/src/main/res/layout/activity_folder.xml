@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="www.foxcoders.com.photoclubbingme.FolderActivity">
+    tools:context="www.foxcoders.com.photoclubbingme.activity.FolderActivity">
 
     <include
         android:id="@+id/folderToolbar"
@@ -92,7 +92,13 @@
         android:id="@+id/navView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true">
+        <ImageView
+            android:id="@+id/adv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add"/>
 
         <include
             android:id="@+id/nav"

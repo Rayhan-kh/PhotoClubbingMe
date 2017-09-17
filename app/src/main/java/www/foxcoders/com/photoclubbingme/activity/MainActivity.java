@@ -1,4 +1,4 @@
-package www.foxcoders.com.photoclubbingme;
+package www.foxcoders.com.photoclubbingme.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+
+import www.foxcoders.com.photoclubbingme.ListSpacingDecoration;
+import www.foxcoders.com.photoclubbingme.R;
+import www.foxcoders.com.photoclubbingme.Util;
+import www.foxcoders.com.photoclubbingme.adapter.EventAdapter;
 
 public class MainActivity extends AppCompatActivity implements EventAdapter.ItemClickListener {
 
@@ -21,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.Item
         toolbar=(Toolbar)findViewById(R.id.homeToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Event List");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        Util.setTitleText("Event List",this);
         final GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(gridLayoutManager);
         eventAdapter = new EventAdapter(this, data);
@@ -34,5 +41,14 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.Item
     @Override
     public void onItemClick(View view, int position) {
         startActivity(new Intent(this,FolderActivity.class));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==android.R.id.home)
+        {
+            finish();
+        }
+        return true;
     }
 }

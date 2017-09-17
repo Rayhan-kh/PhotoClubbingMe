@@ -1,60 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="www.foxcoders.com.photoclubbingme.ShowCaseActivity">
+    android:gravity="center"
+    tools:context="www.foxcoders.com.photoclubbingme.activity.ShowCaseActivity">
+
 
     <include
         android:id="@+id/showCaseToolbar"
         layout="@layout/toolbar" />
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_centerHorizontal="true"
         android:id="@+id/showCase"
-        android:layout_below="@+id/showCaseToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/navLay"
+        android:layout_below="@+id/showCaseToolbar"
         android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/unnamed"
         android:adjustViewBounds="true"
+        android:src="@drawable/star"
         app:riv_corner_radius="12dp" />
+
     <RelativeLayout
         android:id="@+id/hideMask"
-        android:visibility="gone"
-        android:layout_below="@+id/showCaseToolbar"
-        android:layout_above="@id/navLay"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.7">
+        android:layout_above="@id/navLay"
+        android:layout_below="@+id/showCaseToolbar"
+        android:layout_margin="10dp"
+        android:alpha="0.7"
+        android:visibility="gone">
+
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="#ffffff"
-            android:adjustViewBounds="true"
             app:riv_corner_radius="12dp" />
 
         <ImageView
-            android:src="@drawable/ic_visibility_off"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tint="@color/colorAccent"/>
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_visibility_off"
+            android:tint="@color/colorAccent" />
 
     </RelativeLayout>
 
+
+
     <LinearLayout
         android:id="@+id/navLay"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <include layout="@layout/bottom_nav"
-            />
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/adv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add"/>
+
+        <include
+            android:id="@+id/nav"
+            layout="@layout/bottom_nav" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/deleteMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="true">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="#000000"
+            android:alpha="0.5"/>
+        <!--app:riv_corner_radius="12dp"-->
+
+
+        <ProgressBar
+            android:id="@+id/deleteProgress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:progress="75"/>
+
+        <TextView
+            android:text="deleting..."
+            android:textStyle="italic"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="@color/colorWhite"
+            android:layout_above="@+id/deleteProgress"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

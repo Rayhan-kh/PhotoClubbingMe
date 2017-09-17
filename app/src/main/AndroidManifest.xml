@@ -9,17 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".FolderActivity" />
-        <activity android:name=".SendInfoActivity" />
-        <activity android:name=".ShowCaseActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.FolderActivity" />
+        <activity android:name=".activity.SendInfoActivity" />
+        <activity android:name=".activity.ShowCaseActivity" />
+        <activity android:name=".activity.SendActivity" />
+        <activity android:name=".activity.SlideShowActivity"></activity>
     </application>
 
 </manifest>

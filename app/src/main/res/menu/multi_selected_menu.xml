@@ -5,6 +5,11 @@
         android:id="@+id/remove"
         android:title="remove"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/slide"
+        android:title="slideshow"
+        app:showAsAction="never" />
     <item
         android:id="@+id/toQueue"
         android:title="send to queue"

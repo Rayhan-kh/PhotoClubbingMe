@@ -1,4 +1,4 @@
-package www.foxcoders.com.photoclubbingme;
+package www.foxcoders.com.photoclubbingme.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
+import www.foxcoders.com.photoclubbingme.R;
+
 /**
  * Created by Ray on 9/15/2017.
  */
@@ -16,18 +18,19 @@ import android.widget.ImageView;
 public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.ViewHolder> {
 
 
-    FolderActivity folderActivity;
     private String[] mData = new String[0];
     private LayoutInflater mInflater;
     private ThumbnailAdapter.ItemClickListener presenter;
+    public boolean is_in_action_mode=false;
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         CheckBox checkBox;
         ImageView imageView;
         CardView cardView;
         View view;
 
-        public ViewHolder(View itemView, final FolderActivity folderActivity) {
+        public ViewHolder(View itemView) {
             super(itemView);
             view=itemView.findViewById(R.id.mask);
             imageView=(ImageView)itemView.findViewById(R.id.img_th);
@@ -35,7 +38,7 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
             checkBox=(CheckBox)itemView.findViewById(R.id.checkbox);
             itemView.setOnClickListener(this);
             cardView.setLongClickable(true);
-            cardView.setOnLongClickListener(folderActivity);
+            cardView.setOnLongClickListener(this);
             cardView.setOnClickListener(this);
         }
 
@@ -46,19 +49,24 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
             }
             }
 
+        @Override
+        public boolean onLongClick(View v) {
+            presenter.onThumbnailLongClick(v,getAdapterPosition());
+            return true;
+        }
     }
 
     public ThumbnailAdapter(Context context, String[] data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
-        folderActivity= (FolderActivity) context;
         presenter=(ThumbnailAdapter.ItemClickListener)context;
     }
 
     @Override
     public ThumbnailAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.thumbnail_card, parent, false);
-        ThumbnailAdapter.ViewHolder viewHolder = new ThumbnailAdapter.ViewHolder(view,folderActivity);
+        ThumbnailAdapter.ViewHolder viewHolder = new ThumbnailAdapter.ViewHolder(view);
+
         viewHolder.setIsRecyclable(true);
         return viewHolder;
     }
@@ -66,9 +74,13 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
     @Override
     public void onBindViewHolder(ThumbnailAdapter.ViewHolder holder, int position) {
 
-        holder.imageView.setImageResource(R.drawable.ic_perm_identity);
-        if(!folderActivity.is_in_action_mode)
+        holder.imageView.setImageResource(R.drawable.unnamed);
+        if(!is_in_action_mode)
         {
+            if(holder.checkBox.isChecked())
+            {
+                holder.checkBox.setChecked(false);
+            }
             holder.checkBox.setVisibility(View.GONE);
             holder.view.setVisibility(View.GONE);
         }
@@ -93,6 +105,7 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
 
     public interface ItemClickListener {
         void onThumbnailClick(View view, int position);
+        void onThumbnailLongClick(View view,int position);
     }
 
 

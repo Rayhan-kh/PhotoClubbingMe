@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="www.foxcoders.com.photoclubbingme.SendInfoActivity">
+    tools:context="www.foxcoders.com.photoclubbingme.activity.SendInfoActivity">
 
     <include layout="@layout/toolbar"
         android:id="@+id/infoToolbar"/>

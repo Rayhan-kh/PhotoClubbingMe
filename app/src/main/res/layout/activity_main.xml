@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:layout_gravity="center_horizontal"
-    tools:context="www.foxcoders.com.photoclubbingme.MainActivity">
+    tools:context="www.foxcoders.com.photoclubbingme.activity.MainActivity">
 
     <include layout="@layout/toolbar"
         android:id="@+id/homeToolbar"/>

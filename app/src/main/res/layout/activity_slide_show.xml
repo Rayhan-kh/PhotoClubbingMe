@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000"
+    android:gravity="center"
+    tools:context="www.foxcoders.com.photoclubbingme.activity.SlideShowActivity">
+    <include layout="@layout/toolbar"
+        android:id="@+id/slideshowToolbar"
+        />
+    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/slideShow"
+        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        app:icvp_scroll_duration="250"
+        app:icvp_center_page_scale_offset="10dp"
+        app:icvp_min_page_scale_offset="5dp"
+        app:icvp_max_page_scale="0.90"
+        app:icvp_min_page_scale="0.7"
+        app:icvp_medium_scaled="false"
+
+
+        />
+
+
+</LinearLayout>
