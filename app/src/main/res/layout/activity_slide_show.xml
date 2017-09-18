@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#000"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     tools:context="www.foxcoders.com.photoclubbingme.activity.SlideShowActivity">
     <include layout="@layout/toolbar"
         android:id="@+id/slideshowToolbar"
         />
     <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
+        android:layout_below="@id/slideshowToolbar"
+        android:layout_above="@id/adv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/slideShow"
@@ -23,8 +25,14 @@
         app:icvp_min_page_scale="0.7"
         app:icvp_medium_scaled="false"
 
-
         />
+    <ImageView
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/adv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add"/>
 
 
-</LinearLayout>
+</RelativeLayout>

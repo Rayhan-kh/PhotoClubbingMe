@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/colorPrimary"
     tools:context="www.foxcoders.com.photoclubbingme.activity.ShowCaseActivity">
 
 
@@ -12,17 +13,36 @@
         android:id="@+id/showCaseToolbar"
         layout="@layout/toolbar" />
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:layout_centerHorizontal="true"
-        android:id="@+id/showCase"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navLay"
-        android:layout_below="@+id/showCaseToolbar"
-        android:layout_margin="10dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/star"
-        app:riv_corner_radius="12dp" />
+        android:layout_below="@id/showCaseToolbar"
+        android:layout_above="@+id/navLay">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/showCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/travle"
+            app:riv_corner_radius="12dp" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:visibility="gone"
+            android:id="@+id/imgWatermark"
+            app:riv_corner_radius_bottom_left="12dp"
+            app:riv_corner_radius_bottom_right="12dp"
+            android:adjustViewBounds="true"
+            android:layout_alignStart="@+id/showCase"
+            android:layout_alignEnd="@+id/showCase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/water_mark"
+            android:layout_alignBottom="@+id/showCase"/>
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/hideMask"

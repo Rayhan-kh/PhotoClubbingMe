@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:theme="@style/LoginTheme"
+    android:background="@color/colorPrimary"
     tools:context="www.foxcoders.com.photoclubbingme.activity.LoginActivity">
 
     <ImageView

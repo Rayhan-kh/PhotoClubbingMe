@@ -21,6 +21,7 @@ public class SlideshowAdapter extends PagerAdapter {
     List<Integer> drawables;
     Context context;
     LayoutInflater layoutInflater;
+    private int position;
 
     public SlideshowAdapter(List<Integer> drawables,Context context)
     {
@@ -46,10 +47,15 @@ public class SlideshowAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        this.position=position;
         View view=layoutInflater.inflate(R.layout.slide_show,container,false);
         RoundedImageView imageView=(RoundedImageView)view.findViewById(R.id.imageContainer);
         imageView.setImageResource(drawables.get(position));
         container.addView(view);
         return view;
     }
+
+
+
+
 }

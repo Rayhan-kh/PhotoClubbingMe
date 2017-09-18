@@ -74,7 +74,7 @@ public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.View
     @Override
     public void onBindViewHolder(ThumbnailAdapter.ViewHolder holder, int position) {
 
-        holder.imageView.setImageResource(R.drawable.moon);
+        holder.imageView.setImageResource(R.drawable.dance);
         if(!is_in_action_mode)
         {
             if(holder.checkBox.isChecked())

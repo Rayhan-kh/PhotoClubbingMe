@@ -22,7 +22,7 @@ public class ShowCaseActivity extends AppCompatActivity implements View.OnClickL
 
     private ImageView imageView, imageView1, imageView2, imageView3;
     Toolbar toolbar;
-    RoundedImageView roundedImageView;
+    RoundedImageView imgWaterMark;
     RelativeLayout hideMask;
     RelativeLayout deleteMask;
     private SharedPreferences sharedPref;
@@ -36,16 +36,15 @@ public class ShowCaseActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_case);
 
+        imgWaterMark = (RoundedImageView) findViewById(R.id.imgWatermark);
         sharedPref = this.getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        isLoggedIn=sharedPref.getBoolean("isLoggedIn",false);
-        adv=(ImageView)findViewById(R.id.adv);
-        bottomBottom=findViewById(R.id.nav);
+        isLoggedIn = sharedPref.getBoolean("isLoggedIn", false);
+        adv = (ImageView) findViewById(R.id.adv);
+        bottomBottom = findViewById(R.id.nav);
 
-        if(isLoggedIn)
-        {
+        if (isLoggedIn) {
             adv.setVisibility(View.GONE);
-        }
-        else {
+        } else {
             bottomBottom.setVisibility(View.GONE);
         }
 
@@ -56,7 +55,7 @@ public class ShowCaseActivity extends AppCompatActivity implements View.OnClickL
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        Util.setTitleText("Image_title",this);
+        Util.setTitleText("Image_title", this);
         hideMask = (RelativeLayout) findViewById(R.id.hideMask);
         deleteMask = (RelativeLayout) findViewById(R.id.deleteMask);
 
@@ -88,7 +87,6 @@ public class ShowCaseActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.hide) {
@@ -112,13 +110,12 @@ public class ShowCaseActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if (item.getItemId() == R.id.watermark) {
-            //// TODO: 9/16/2017
+            imgWaterMark.setVisibility(View.VISIBLE);
         }
 
         if (item.getItemId() == android.R.id.home) {
             finish();
         }
-
         return true;
 
     }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="www.foxcoders.com.photoclubbingme.activity.SendActivity">
 
     <include
@@ -22,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/star"
+            android:src="@drawable/jelly"
             app:riv_corner_radius="7dp" />
 
         <ProgressBar

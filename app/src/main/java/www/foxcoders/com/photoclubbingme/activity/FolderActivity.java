@@ -103,6 +103,7 @@ public class FolderActivity extends AppCompatActivity implements View.OnClickLis
     protected void onResume() {
         thumbnailAdapter.is_in_action_mode=false;
         thumbnailAdapter.notifyDataSetChanged();
+        toolbar.getMenu().clear();
         super.onResume();
     }
     public void goToSend()
