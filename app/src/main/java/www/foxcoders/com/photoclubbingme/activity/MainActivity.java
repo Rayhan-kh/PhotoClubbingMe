@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.Item
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         Util.setTitleText("Event List",this);
-        final GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+        final GridLayoutManager gridLayoutManager=new GridLayoutManager(this,3);
         recyclerView.setLayoutManager(gridLayoutManager);
         eventAdapter = new EventAdapter(this, data);
         eventAdapter.setClickListener(this);

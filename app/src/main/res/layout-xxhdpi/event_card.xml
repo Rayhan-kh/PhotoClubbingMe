@@ -23,9 +23,8 @@
             android:gravity="center"
             android:scaleType="centerCrop"
             android:src="@drawable/flower"
-            app:riv_corner_radius="7dp"
             app:riv_corner_radius_top_left="7dp"
-            app:riv_corner_radius_top_right="7dp"/>
+            app:riv_corner_radius_top_right="7dp" />
 
 
         <TextView

@@ -2,6 +2,7 @@
     <string name="app_name">PhotoClubbing Me</string>
     <string name="skip"><![CDATA[skip>]]></string>
     <string name="secret_code">Secret Code</string>
-    <string name="dummyDate">12th July,2017</string>
+    <string name="number">(90)</string>
     <string name="_25">(25)</string>
+    <string name="location">location</string>
 </resources>

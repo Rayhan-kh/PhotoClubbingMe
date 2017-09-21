@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+
 import www.foxcoders.com.photoclubbingme.R;
 
 /**
@@ -19,11 +21,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     private ItemClickListener mClickListener;
 
 
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private RoundedImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
+            imageView=(RoundedImageView)itemView.findViewById(R.id.roundedImage1);
         }
 
         @Override
@@ -45,12 +50,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.event_card, parent, false);
+        RoundedImageView imageView=(RoundedImageView)view.findViewById(R.id.roundedImage1);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(EventAdapter.ViewHolder holder, int position) {
+
+
 
 
     }

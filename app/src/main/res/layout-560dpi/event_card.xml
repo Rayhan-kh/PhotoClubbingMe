@@ -16,16 +16,15 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/roundedImage1"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:gravity="center"
             android:scaleType="centerCrop"
             android:src="@drawable/flower"
-            app:riv_corner_radius="7dp"
             app:riv_corner_radius_top_left="7dp"
-            app:riv_corner_radius_top_right="7dp"/>
+            app:riv_corner_radius_top_right="7dp" />
 
 
         <TextView
